@@ -1,0 +1,14 @@
+{
+  "id": 0,
+  "date": "2022",
+  "name": "Estatales",
+  "place": "Dinamarca",
+  "chamberName": "Folketing",
+  "totalElects": 179,
+  "scrutinized": 99.99,
+  "validVotes": 3592039,
+  "abstentions": 150000,
+  "blankVotes": 200000,
+  "nullVotes": 100000,
+  "results": []
+}

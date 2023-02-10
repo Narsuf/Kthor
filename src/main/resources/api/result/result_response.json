@@ -1,0 +1,12 @@
+{
+  "id": 0,
+  "partyId": -1,
+  "electionId": -2,
+  "elects": 169,
+  "votes": 11289335,
+  "party": {
+    "id": -1,
+    "name": "PSOE",
+    "color": "E20025"
+  }
+}
