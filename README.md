@@ -28,4 +28,4 @@ No need to say you will need a database running that you can access to.
 
 ## Documentation
 More information about the expected responses from this web service 
-[here](https://gitlab.com/Narsuf/ktor-webservice/-/tree/main/docs).
+[here](https://github.com/Narsuf/ktor-webservice/tree/main/docs).
