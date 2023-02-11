@@ -1,1 +1,1 @@
-rootProject.name = "com.jorgedguezm.webservice"
+rootProject.name = "com.jorgedguezm.kthor"
