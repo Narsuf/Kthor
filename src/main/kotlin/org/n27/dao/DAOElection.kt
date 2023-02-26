@@ -1,13 +1,13 @@
 package org.n27.dao
 
+import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.n27.DatabaseFactory.dbQuery
 import org.n27.dao.DAOResult.Companion.insertResult
 import org.n27.dao.DAOResult.Companion.resultRowToResult
 import org.n27.models.Election
 import org.n27.models.Elections
 import org.n27.models.Results
-import org.jetbrains.exposed.sql.*
-import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 
 class DAOElection : DAOFacade<Election> {
 

@@ -1,9 +1,7 @@
 package org.n27
 
-import org.n27.plugins.*
 import io.ktor.server.application.*
-import org.n27.plugins.configureRouting
-import org.n27.plugins.configureSerialization
+import org.n27.plugins.*
 
 fun main(args: Array<String>): Unit = io.ktor.server.cio.EngineMain.main(args)
 

@@ -1,13 +1,13 @@
 package org.n27
 
-import org.n27.models.Elections
-import org.n27.models.Parties
-import org.n27.models.Results
 import kotlinx.coroutines.Dispatchers
 import org.jetbrains.exposed.sql.Database
 import org.jetbrains.exposed.sql.SchemaUtils
 import org.jetbrains.exposed.sql.transactions.experimental.newSuspendedTransaction
 import org.jetbrains.exposed.sql.transactions.transaction
+import org.n27.models.Elections
+import org.n27.models.Parties
+import org.n27.models.Results
 
 object DatabaseFactory {
 

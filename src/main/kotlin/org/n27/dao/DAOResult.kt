@@ -1,12 +1,12 @@
 package org.n27.dao
 
+import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.n27.DatabaseFactory.dbQuery
 import org.n27.dao.DAOParty.Companion.getParty
 import org.n27.dao.DAOParty.Companion.insertParty
 import org.n27.models.Result
 import org.n27.models.Results
-import org.jetbrains.exposed.sql.*
-import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 
 class DAOResult : DAOFacade<Result> {
 
@@ -33,18 +33,18 @@ class DAOResult : DAOFacade<Result> {
                 it[votes] = result.votes
             }
 
-            return insertStatement.resultedValues?.singleOrNull()?.let(Companion::resultRowToResult)
+            return insertStatement.resultedValues?.singleOrNull()?.let(::resultRowToResult)
         }
     }
 
-    override suspend fun all(): List<Result> = dbQuery { Results.selectAll().map(Companion::resultRowToResult) }
+    override suspend fun all(): List<Result> = dbQuery { Results.selectAll().map(::resultRowToResult) }
     override suspend fun delete(id: Int): Boolean = dbQuery { Results.deleteWhere { Results.id eq id } > 0 }
     override suspend fun add(param: Result): Result? = dbQuery { insertResult(param) }
 
     override suspend fun get(id: Int): Result? = dbQuery {
         Results
             .select { Results.id eq id }
-            .map(Companion::resultRowToResult)
+            .map(::resultRowToResult)
             .singleOrNull()
     }
 

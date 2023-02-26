@@ -1,10 +1,10 @@
 package org.n27.dao
 
+import org.jetbrains.exposed.sql.*
+import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 import org.n27.DatabaseFactory.dbQuery
 import org.n27.models.Parties
 import org.n27.models.Party
-import org.jetbrains.exposed.sql.*
-import org.jetbrains.exposed.sql.SqlExpressionBuilder.eq
 
 class DAOParty : DAOFacade<Party> {
 
@@ -18,7 +18,7 @@ class DAOParty : DAOFacade<Party> {
         internal fun getParty(id: Int): Party? {
             return Parties
                 .select { Parties.id eq id }
-                .map(Companion::resultRowToParty)
+                .map(::resultRowToParty)
                 .singleOrNull()
         }
 
@@ -28,11 +28,11 @@ class DAOParty : DAOFacade<Party> {
                 it[color] = party.color
             }
 
-            return insertStatement.resultedValues?.singleOrNull()?.let(Companion::resultRowToParty)
+            return insertStatement.resultedValues?.singleOrNull()?.let(::resultRowToParty)
         }
     }
 
-    override suspend fun all(): List<Party> = dbQuery { Parties.selectAll().map(Companion::resultRowToParty) }
+    override suspend fun all(): List<Party> = dbQuery { Parties.selectAll().map(::resultRowToParty) }
     override suspend fun delete(id: Int): Boolean = dbQuery { Parties.deleteWhere { Parties.id eq id } > 0 }
     override suspend fun add(param: Party): Party? = dbQuery { insertParty(param) }
     override suspend fun get(id: Int): Party? = dbQuery { getParty(id) }
