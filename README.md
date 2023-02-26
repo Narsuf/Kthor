@@ -23,7 +23,7 @@ ktor {
     }
 
     application {
-        modules = [ com.jorgedguezm.ApplicationKt.module ]
+        modules = [ org.n27.ApplicationKt.module ]
     }
 }
 ```
