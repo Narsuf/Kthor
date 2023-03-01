@@ -14,7 +14,6 @@ In order to make it work you will need to add an `application.conf` file inside
 ktor {
     deployment {
         port = 1234
-        port = ${?PORT}
         dbDriver = "your.db.driver"
         dbUrl = "jdbc:yourdb://localhost:5678/dbname"
         user = "user"
